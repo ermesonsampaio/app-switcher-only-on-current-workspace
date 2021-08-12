@@ -1,0 +1,9 @@
+{
+  "name": "Alt + Tab only on current workspace",
+  "description": "Force alt + tab to switch only in the current workspace.",
+  "uuid": "appswitcheronlyoncurrentworkspace@ermesonsampaio.com",
+  "shell-version": [
+    "40"
+  ],
+  "homepage": "http://github.com/ermesonsampaio/app-switcher-only-on-current-workspace"
+}
