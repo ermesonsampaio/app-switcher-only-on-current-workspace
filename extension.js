@@ -2,10 +2,12 @@ const GETTEXT_DOMAIN = 'appswitcher-only-current-workspace';
 
 const { GObject, St, GLib } = imports.gi;
 
-const Gettext = imports.gettext.domain(GETTEXT_DOMAIN);
-const _ = Gettext.gettext;
+const Gettext = imports.gettext;
+const _ = Gettext.domain(GETTEXT_DOMAIN).gettext;
 
 const ExtensionUtils = imports.misc.extensionUtils;
+const Me = ExtensionUtils.getCurrentExtension();
+
 const Main = imports.ui.main;
 const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
@@ -13,7 +15,7 @@ const PopupMenu = imports.ui.popupMenu;
 const Indicator = GObject.registerClass(
 class Indicator extends PanelMenu.Button {
   _init() {
-    super._init(0.0, _('App Switcher Only Current Workspace'));
+    super._init(0.0, 'App Switcher Only Current Workspace');
 
     this.add_child(
       new St.Icon({
@@ -46,7 +48,8 @@ class Extension {
   constructor(uuid) {
     this._uuid = uuid;
 
-    ExtensionUtils.initTranslations(GETTEXT_DOMAIN);
+    Gettext.bindtextdomain(GETTEXT_DOMAIN, Me.dir.get_child('locale').get_path());
+    Gettext.textdomain(GETTEXT_DOMAIN);
   }
 
   enable() {
