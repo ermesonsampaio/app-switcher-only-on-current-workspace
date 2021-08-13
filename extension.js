@@ -1,8 +1,9 @@
-const { GLib } = imports.gi;
+const { GLib, Gio } = imports.gi;
 
 class Extension {
   constructor(uuid) {
     this._uuid = uuid;
+    this._settings = new Gio.Settings({ schema: 'org.gnome.shell.app-switcher' });
   }
 
   enable() {
@@ -14,7 +15,7 @@ class Extension {
   }
 
   _configureAppSwitcher(value) {
-    GLib.spawn_command_line_async(`gsettings set org.gnome.shell.app-switcher current-workspace-only ${value}`);
+    this._settings.set_boolean('current-workspace-only', value);
   }
 }
 

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-zip -r extension.zip extension.js metadata.json stylesheet.css
+zip -r extension.zip extension.js metadata.json
