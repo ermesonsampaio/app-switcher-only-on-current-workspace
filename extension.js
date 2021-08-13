@@ -3,10 +3,10 @@ const { GLib, Gio } = imports.gi;
 class Extension {
   constructor(uuid) {
     this._uuid = uuid;
-    this._settings = new Gio.Settings({ schema: 'org.gnome.shell.app-switcher' });
   }
 
   enable() {
+		this._settings = new Gio.Settings({ schema: 'org.gnome.shell.app-switcher' });
     this._configureAppSwitcher(true);
   }
 
