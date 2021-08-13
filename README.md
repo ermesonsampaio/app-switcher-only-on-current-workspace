@@ -7,6 +7,6 @@ Extension Page: (Extension in review)
 ## Manual installation
 
 ```sh
-cd ~/.local/share/gnome-shell/extensions/
-git clone https://github.com/ermesonsampaio/app-switcher-only-on-current-workspace.git
+chmod +x install.sh
+./install.sh
 ```
