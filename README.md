@@ -14,7 +14,7 @@ git clone https://github.com/ermesonsampaio/app-switcher-only-on-current-workspa
 
 - Then, change to cloned repository and install extension.
 ```sh
-cd alt-tab-only-on-current-workspace
+cd app-switcher-only-on-current-workspace
 chmod +x install.sh
 ./install.sh
 ```
